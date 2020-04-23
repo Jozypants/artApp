@@ -2,7 +2,7 @@ export class ArtService {
   async getArt() {
     try {
       // eslint-disable-next-line 
-      let response = await fetch(`https://api.harvardartmuseums.org/object?apikey=${process.env.API_KEY}&hasimage=1&q=ghost|rooster&page=${Math.floor(Math.random()*12)}`);
+      let response = await fetch(`https://api.harvardartmuseums.org/object?apikey=${process.env.API_KEY}&hasimage=1&q=ghost|rooster|cat&page=${Math.floor(Math.random()*200)}`);
       let jsonifiedResponse;
       if (response.ok && response.status == 200) {
         jsonifiedResponse = await response.json();
