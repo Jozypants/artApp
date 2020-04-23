@@ -21,9 +21,11 @@ $(document).ready(function (){
   (async () => {
     let artService = new ArtService();
     const response = await artService.getArt();
-    let {title, people, images} = response;
+    let {title, people, images} =  response;
     $('.art').html(`<h1>${title}</h1><br><div class="car-div"></div> `)
-    if(images.length>1){
+    if(images.length < 1){
+      $(".car-div").html(`<img src='https://www.cowgirlcontractcleaning.com/wp-content/uploads/sites/360/2018/05/placeholder-img-3.jpg' alt='placeholder'></img> <br><br> <footer>-${people? people[0].name : "Anonymous" }</footer>`)
+    }else if(images.length>1){
       $(".car-div").html(carTop+carBottom);
       images.forEach((image,i)=>{
         if(i===0){
@@ -49,7 +51,9 @@ $(document).ready(function (){
       const response = await artService.getArt();
       let {title, people, images} = response;
       $('.art').html(`<h1>${title}</h1><br><div class="car-div"></div> `)
-      if(images.length>1){
+      if(images.length < 1){
+        $(".car-div").html(`<img src='https://www.cowgirlcontractcleaning.com/wp-content/uploads/sites/360/2018/05/placeholder-img-3.jpg' alt='placeholder'></img> <br><br> <footer>-${people? people[0].name : "Anonymous" }</footer>`)
+      }else if(images.length>1){
         $(".car-div").html(carTop+carBottom);
         images.forEach((image,i)=>{
           if(i===0){
