@@ -58,7 +58,7 @@ $(document).ready(function (){
         images.forEach((image,i)=>{
           if(i===0){
             $('#carousel-art').append(`<div class="carousel-item active">
-            <img class="d-block w-100" src="${image.baseimageurl}" alt="First slide">
+            <img  class="d-block w-100" src="${image.baseimageurl}" alt="First slide">
             <br><br><footer>-${people? people[0].name : "Anonymous" }</footer>
           </div>`)
           }else{
